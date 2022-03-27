@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from jcoronel_coderhouse.views import primer_vista, segunda_vista, nombre_usuario, año_nacimiento
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('primer/', primer_vista),
+    path('segunda/', segunda_vista),
+    path('nombre/<nombre>', nombre_usuario),
+    path('nacimiento/<edad>', año_nacimiento),
+    
 ]
