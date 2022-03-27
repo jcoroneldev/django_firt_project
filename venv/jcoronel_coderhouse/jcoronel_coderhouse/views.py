@@ -6,10 +6,14 @@ from django.template import Template, Context
 from datetime import datetime
 
 def primer_vista(request):
+    nombre = "Javier"
+    apellido = "Coronel"
+    lista = [1,2,3,10,9,8,10,10,1,2,3,4]
+    dict_context = {"nombre" : nombre, "apellido" : apellido , "listado" : lista}
     archivo = open(r"C:\Users\javie\OneDrive\Documentos\django-intro\venv\jcoronel_coderhouse\jcoronel_coderhouse\templates\inicio.html", 'r')
     plantilla = Template(archivo.read())
     archivo.close()
-    contexto = Context(archivo)
+    contexto = Context(dict_context)
     documento = plantilla.render(contexto)
     return  HttpResponse (documento)
 

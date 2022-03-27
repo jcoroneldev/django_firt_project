@@ -7,7 +7,24 @@
     <title>My fist Django APP</title>
 </head>
 <body>
-    <h1>Hi there </h1>
+    <h1>Hi there {{nombre}} {{apellido}}</h1>
+    <p>Your califications of Python course are:</p>
+    <ul>
+        {% for calificacion in listado %}
+            {% if calificacion <= 5 %}           
+                <li style= "color: red">
+                    {{calificacion}}
+                </li>
+            {% endif %}
+            {% if calificacion > 5 %}           
+                <li style= "color: green">
+                    {{calificacion}}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+
     <img src="https://media4.giphy.com/media/l0HlHFRbmaZtBRhXG/giphy.gif" alt="Funny image"> 
         
 </body>
